@@ -5,9 +5,28 @@ const apiUrl = process.env.REACT_APP_API_URL;
 
 const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    axios.get(`${apiUrl}/allHoldings`).then((res) => setAllHoldings(res.data));
+    console.log("API URL:", apiUrl); // Debug log
+    setLoading(true);
+    axios
+      .get(`${apiUrl}/allHoldings`)
+      .then((res) => {
+        console.log("Holdings data received:", res.data); // Debug log
+        setAllHoldings(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching holdings:", err); // Debug log
+        setError(err.message);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) return <div>Loading holdings...</div>;
+  if (error) return <div>Error loading holdings: {error}</div>;
 
   const labels = allHoldings.map((subArray) => subArray["name"]);
 
