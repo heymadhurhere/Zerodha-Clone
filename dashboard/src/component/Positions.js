@@ -4,7 +4,11 @@ const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3002";
 
 const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   useEffect(() => {
+    console.log("API URL:", apiUrl); // Debug log
+    setLoading(true);
     axios
       .get(`${apiUrl}/allPositions`)
       .then((res) => setAllPositions(res.data));
