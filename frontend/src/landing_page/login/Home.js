@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3002";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Home = () => {
         navigate("/login");
       }
       const { data } = await axios.post(
-        "http://localhost:3002",
+        `${apiUrl}`,
         {},
         { withCredentials: true }
       );

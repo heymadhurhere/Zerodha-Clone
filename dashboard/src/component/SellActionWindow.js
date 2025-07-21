@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import GeneralContext from "./GeneralContext";
 import "./BuyActionWindow.css";
+const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3002";
 
 const SellActionWindow = ({ uid, maxQty }) => {
   const [stockQuantity, setStockQuantity] = useState("");
@@ -19,7 +20,7 @@ const SellActionWindow = ({ uid, maxQty }) => {
       setError(`You can only sell up to ${maxQty} units!`);
       return;
     }
-    axios.post("http://localhost:3002/newOrder", {
+    axios.post(`${apiUrl}/newOrder`, {
       name: uid,
       qty: qty,
       price: stockPrice,

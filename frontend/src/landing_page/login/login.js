@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "../signup/AuthForm.css";
+const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3002";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/login",
+        `${apiUrl}/login`,
         {
           ...inputValue,
         },
