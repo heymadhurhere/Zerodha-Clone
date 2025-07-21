@@ -22,7 +22,7 @@ const Holdings = () => {
         backgroundColor: "rgba(75, 192, 192, 0.5)",
       },
     ],
-  }
+  };
 
   return (
     <>

@@ -30,7 +30,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["https://zerodha-clone-k15n.vercel.app"],
+    origin: ["https://zerodha-clone-k15n.vercel.app", "http://localhost:3000", "http://localhost:3001"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
