@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {VerticalGraph} from "./VerticalGraph";
+import { VerticalGraph } from "./VerticalGraph";
 const apiUrl = process.env.REACT_APP_API_URL;
 
 const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
   useEffect(() => {
-    axios
-      .get(`${apiUrl}/allHoldings`)
-      .then((res) => setAllHoldings(res.data));
+    axios.get(`${apiUrl}/allHoldings`).then((res) => setAllHoldings(res.data));
   }, []);
 
-  const labels = allHoldings.map((stock) => stock.name);
+  const labels = allHoldings.map((subArray) => subArray["name"]);
 
   const data = {
-    labels: labels,
+    labels,
     datasets: [
       {
-        label: "Stock Prices",
-        data: allHoldings.map((stock) => stock.qty * stock.price),
-        backgroundColor: "rgba(75, 192, 192, 0.5)",
+        label: "Stock Price",
+        data: allHoldings.map((stock) => stock.price),
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
     ],
   };
