@@ -82,6 +82,7 @@ const Holdings = () => {
           <p>P&L</p>
         </div>
       </div>
+      {JSON.stringify(data)}
       <VerticalGraph data={data} />
     </>
   );
