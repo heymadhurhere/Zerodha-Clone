@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {VerticalGraph} from "./VerticalGraph";
-const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3002";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
