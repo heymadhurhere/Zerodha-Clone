@@ -11,9 +11,10 @@ This project is divided into **frontend**, **backend**, and **dashboard** applic
 - **Backend**: [zerodha-clone-zo2k.onrender.com](https://zerodha-clone-zo2k.onrender.com)
 - **Dashboard**: [zerodha-clone-bay-nu.vercel.app](https://zerodha-clone-bay-nu.vercel.app)
 
-```
+
 
 ## 📁 Project Structure
+```
 
 Zerodha-Clone/
 │
