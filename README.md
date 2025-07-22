@@ -17,15 +17,43 @@ This project is divided into **frontend**, **backend**, and **dashboard** applic
 
 Zerodha-Clone/
 │
-├── backend/ # Node.js/Express REST API (authentication, data, etc.)
+├── backend/         # Node.js/Express REST API (authentication, data management)
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   ├── utils/
+│   ├── .env.example
+│   ├── package.json
+│   └── server.js
 │
-├── frontend/ # Main client-facing React application
+├── frontend/        # Main client-facing React application
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── hooks/
+│   │   ├── utils/
+│   │   └── App.js
+│   ├── .env.example
+│   ├── package.json
+│   └── README.md
 │
-├── dashboard/ # Admin dashboard (React)
+├── dashboard/       # Admin dashboard (React)
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── charts/
+│   │   └── App.js
+│   ├── .env.example
+│   ├── package.json
+│   └── README.md
 │
 ├── .gitignore
 ├── package.json
 └── README.md
+
 
 ---
 
