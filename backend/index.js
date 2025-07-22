@@ -36,6 +36,8 @@ app.use(
   })
 );
 
+app.use(bodyParser.json());
+
 
 app.use("/", authRoute);
 
